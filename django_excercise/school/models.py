@@ -13,12 +13,6 @@ class Classroom(models.Model):
     name = models.CharField(max_length=126, unique=True)
     school = models.ForeignKey(School, on_delete=models.CASCADE)
 
-    def __unicode__(self):
-        return self.name
-
 class Student(models.Model):
     name = models.CharField(max_length=126, unique=True)
     classroom = models.ForeignKey(Classroom)
-
-    def __unicode__(self):
-        return self.name
